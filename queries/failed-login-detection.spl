@@ -1,0 +1,5 @@
+
+index=main action=login status=failed
+| stats count by user src_ip
+| where count >= 3
+| sort - count
